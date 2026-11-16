@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "description": "VibeTrace — transparent website forensics, technology intelligence and AI-development signal analysis.",
+  "license": "MIT",
   "packageManager": "pnpm@12.21.0",
   "engines": {
     "node": ">=20.19"

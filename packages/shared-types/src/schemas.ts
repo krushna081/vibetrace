@@ -307,9 +307,11 @@ export const PageSnapshotSchema = z.object({
   url: z.string().url().max(2048),
   title: z.string().max(500),
   lang: z.string().max(40),
-  meta: z.record(z.string()).refine((v) => Object.keys(v).length <= SNAPSHOT_LIMITS.metaEntries, {
-    message: "Too many meta entries",
-  }),
+  meta: z
+    .record(z.string(), z.string())
+    .refine((v) => Object.keys(v).length <= SNAPSHOT_LIMITS.metaEntries, {
+      message: "Too many meta entries",
+    }),
   html: z.string().max(SNAPSHOT_LIMITS.htmlBytes),
   scriptSources: z.array(z.string().max(2048)).max(SNAPSHOT_LIMITS.scriptSources),
   stylesheetHrefs: z.array(z.string().max(2048)).max(SNAPSHOT_LIMITS.stylesheetHrefs),

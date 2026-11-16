@@ -225,4 +225,4 @@ They require a desktop Chromium that Playwright supports. Playwright refuses to 
 
 ## License
 
-Private workspace. Add an explicit license before distributing.
+Released under the [MIT License](./LICENSE). © 2026 Krushna Jadhav.
