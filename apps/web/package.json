@@ -1,0 +1,33 @@
+{
+  "name": "@vibetrace/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5173",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@vibetrace/api-client": "workspace:*",
+    "@vibetrace/design-system": "workspace:*",
+    "@vibetrace/scoring-engine": "workspace:*",
+    "@vibetrace/shared-types": "workspace:*",
+    "framer-motion": "^12.43.0",
+    "lucide-react": "^0.577.0",
+    "react": "^19.1.10",
+    "react-dom": "^19.1.10",
+    "react-router-dom": "^7.18.5",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^5.0.4",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.8"
+  }
+}

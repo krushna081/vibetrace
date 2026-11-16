@@ -1,0 +1,53 @@
+{
+  "name": "vibetrace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "VibeTrace — transparent website forensics, technology intelligence and AI-development signal analysis.",
+  "packageManager": "pnpm@12.21.0",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter @vibetrace/api --filter @vibetrace/web dev",
+    "dev:api": "pnpm --filter @vibetrace/api dev",
+    "dev:web": "pnpm --filter @vibetrace/web dev",
+    "dev:extension": "pnpm --filter @vibetrace/extension dev",
+    "build": "pnpm --filter @vibetrace/web build && pnpm --filter @vibetrace/extension build && pnpm --filter @vibetrace/api build",
+    "build:web": "pnpm --filter @vibetrace/web build",
+    "build:extension": "pnpm --filter @vibetrace/extension build",
+    "build:api": "pnpm --filter @vibetrace/api build",
+    "preview:web": "pnpm --filter @vibetrace/web preview",
+    "start:api": "pnpm --filter @vibetrace/api start",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "extension:icons": "pnpm --filter @vibetrace/extension icons",
+    "db:generate": "pnpm --filter @vibetrace/api db:generate",
+    "db:push": "pnpm --filter @vibetrace/api db:push"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@playwright/test": "^1.65.1",
+    "@testing-library/jest-dom": "^6.10.0",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^16.5.0",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.10.1",
+    "react": "^19.1.10",
+    "react-dom": "^19.1.10",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.2",
+    "vitest": "^3.2.7"
+  }
+}

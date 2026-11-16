@@ -1,0 +1,37 @@
+// PostgreSQL persistence is optional. The default local mode uses memory.
+// To enable it:
+//   pnpm --filter @vibetrace/api add -D prisma
+//   pnpm --filter @vibetrace/api add @prisma/client
+//   STORAGE_DRIVER=prisma DATABASE_URL=... pnpm db:generate
+//   STORAGE_DRIVER=prisma DATABASE_URL=... pnpm db:push
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Scan {
+  id          String    @id
+  url         String
+  domain      String
+  mode        String
+  client      String
+  status      String
+  progress    Json
+  error       Json?
+  createdAt   DateTime  @default(now())
+  startedAt   DateTime?
+  completedAt DateTime?
+  durationMs  Int?
+  report      Json?
+  summary     Json
+  shareToken  String?   @unique
+  sharedAt    DateTime?
+
+  @@index([createdAt])
+  @@index([status])
+}
